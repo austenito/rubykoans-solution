@@ -14,7 +14,20 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
-  # WRITE THIS CODE
+  triangle_hash = Hash.new{0}
+  triangle_hash[a.to_s] = triangle_hash[a.to_s] + 1
+  triangle_hash[b.to_s] = triangle_hash[b.to_s] + 1
+  triangle_hash[c.to_s] = triangle_hash[c.to_s] + 1
+
+  length = triangle_hash.length
+  case 
+  when length == 1
+    :equilateral
+  when length == 2
+    :isosceles
+  else
+    :scalene
+  end
 end
 
 # Error class used in part 2.  No need to change this code.
